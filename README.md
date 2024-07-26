@@ -16,13 +16,15 @@ say? It's a symbol that _operates_ on one or more (usually two) objects —
 what's to the right of `+` together."
 
 If you haven't already, fork and clone this lab into your local environment.
-Navigate into its directory in the terminal, then run `code .` to open the files
-in Visual Studio Code. (If you are using a different text editor, the command
-will be different.)
+Remember to **fork** a copy into your GitHub account first, then clone from that
+copy. Once you've cloned it down, navigate into its directory in the terminal,
+then run `code .` to open the files in Visual Studio Code. (If you are using a
+different text editor, the command will be different.)
 
 As you read through this lesson, you're going to be adding your solutions to
 `index.js`. You'll write a total of eight functions. Use the results of running
-`learn test` to guide you towards the right function names and functionality.
+`npm test` to guide you towards the right function names and functionality.
+Remember to run `npm install` first to install the dependencies.
 
 ## Basic Math
 
@@ -30,9 +32,7 @@ The most fundamental math operations work as one might expect in JavaScript: `+`
 adds two numbers; `-` subtracts one number from another; `*` multiplies two
 numbers; and `/` divides one number by another.
 
-Give it a try: type each of the following math examples into the REPL console.
-You can use the embedded console below or open [replit][] in a separate window
-if you prefer.
+Give it a try: type each of the following math examples into your terminal prompt after using the `node` command.
 
 ```javascript
 1 + 80; //=> 81
@@ -41,15 +41,14 @@ if you prefer.
 5.0 / 2.5; //=> 2
 ```
 
-<iframe height="400px" width="100%" src="https://replit.com/@lizbur10/Sandbox?embed=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-Go ahead and run `learn test` and take a look at the first failing test:
+You can then exit the node prompt using `.exit` then navigate back to the lab directory in your terminal if necessary.
+Go ahead and run `npm test` and take a look at the first failing test:
 
 ```console
   1) basic math functions
        'add()' is a valid function:
      ReferenceError: add is not defined
-      at Context.<anonymous> (test/index-test.js:10:12)
+      at Context.<anonymous> (test/indexTest.js:10:12)
       at processImmediate (node:internal/timers:464:21)
 ```
 
@@ -65,7 +64,7 @@ function add() {
 }
 ```
 
-Once you've added the empty function, run `learn test` again; the first test
+Once you've added the empty function, run `npm test` again; the first test
 should be passing. Go ahead and get the next three tests passing as well before
 moving on.
 
@@ -78,7 +77,7 @@ similar to this:
      Error: Expected undefined to equal 1078
       at assert (node_modules/expect/lib/assert.js:29:9)
       at Expectation.toEqual (node_modules/expect/lib/Expectation.js:81:30)
-      at Context.<anonymous> (test/index-test.js:26:23)
+      at Context.<anonymous> (test/indexTest.js:26:23)
       at processImmediate (node:internal/timers:464:21)
 ```
 
@@ -117,7 +116,7 @@ Running the tests now we get:
      Error: Expected 'something' to equal 853
       at assert (node_modules/expect/lib/assert.js:29:9)
       at Expectation.toEqual (node_modules/expect/lib/Expectation.js:81:30)
-      at Context.<anonymous> (test/index-test.js:26:23)
+      at Context.<anonymous> (test/indexTest.js:26:23)
       at processImmediate (node:internal/timers:464:21)
 ```
 
@@ -175,7 +174,7 @@ to the next section.
 ## Math + Assignment
 
 Recall that we can increment (`++`) and decrement (`--`) a number if it's
-assigned to a variable. Don't forget to follow along in the REPL console.
+assigned to a variable. Please follow along in the terminal using the `node` command.
 
 ```javascript
 let number = 5;
@@ -211,7 +210,7 @@ incrementors and decrementors when the shorthand makes what you're writing
 easier to read (more on when _exactly_ in a later lesson). Instead, it's best to
 use the basic arithmetic operators combined with `=`.
 
-Follow along in the REPL console. You can pick up where we left off with the
+Follow along in the terminal. You can pick up where we left off with the
 previous examples. Start by setting `number` equal to 5.
 
 - `+=` modifies the value to the operator's left by adding to it the value to
@@ -244,7 +243,7 @@ number /= 5; //=> 12
 
 Note that these methods modify the variable in place. So, if we have two
 functions that depend on the same external variable, the order in which they are
-called matters. Follow along in the console:
+called matters. Follow along in the terminal:
 
 ```javascript
 //reset number
@@ -342,6 +341,14 @@ You now have the information you need to write the final two functions,
 in a string, parse it into a base 10 integer and return it.
 `preserveDecimal(string)` should take in a string, parse it into a float and
 return it.
+
+After you have all the tests passing, remember to commit and push your changes
+up to GitHub, then submit your work to Canvas using CodeGrade. If you need a
+reminder, go back to the [Complete Your First Software Engineering
+Assignment][complete-assignment] lesson to review the process.
+
+[complete-assignment]: https://github.com/learn-co-curriculum/phase-0-completing-assignments-codegrade
+
 
 ## Resources
 
